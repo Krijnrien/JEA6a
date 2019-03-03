@@ -1,0 +1,46 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                template="/pages/template/template.xhtml">
+    <ui:define name="title">New User</ui:define>
+    <ui:define name="content">
+        <div class="container">
+            <header class="header">
+                <h1>New User</h1>
+            </header>
+            <div class="content-container">
+                <h:form>
+                    <div class="form-group">
+                        <p:inputText id="username"
+                                     placeholder="username"
+                                     required="true"
+                                     requiredMessage="password"
+                                     styleClass="form-control"
+                                     value="#{userBean.username}"/>
+                    </div>
+                    <div class="form-group">
+                        <p:inputText id="email"
+                                     placeholder="Email"
+                                     required="true"
+                                     requiredMessage="email"
+                                     styleClass="form-control"
+                                     type="email"
+                                     value="#{userBean.emailAddress}"/>
+                    </div>
+                    <div class="form-group">
+                        <p:password id="password"
+                                    placeholder="password"
+                                    required="true"
+                                    requiredMessage="password"
+                                    styleClass="form-control"
+                                    type="password"
+                                    value="#{userBean.password}"/>
+                    </div>
+                    <p:commandButton action="#{userBean.createUser}" id="register" value="Registreer"
+                                     styleClass="btn btn-success"/>
+                </h:form>
+            </div>
+        </div>
+    </ui:define>
+</ui:composition>
